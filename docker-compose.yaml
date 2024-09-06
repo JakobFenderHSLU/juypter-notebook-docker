@@ -1,0 +1,14 @@
+version: '3'
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CONTEXT=example-project
+    volumes:
+      - ./data:/data
+    ports:
+      - "8888:8888"
+      - "8822:22"
+    container_name: jupyter-notebook
